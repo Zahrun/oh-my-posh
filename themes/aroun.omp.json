@@ -1,0 +1,68 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "#ffffff",
+	  "foreground_templates": [
+            "{{ if gt .Code 0 }}red{{ end }}"
+          ],
+          "style": "plain",
+          "template": " {{ reason .Code }}",
+          "type": "status"
+        },
+        {
+          "foreground": "#100e23",
+          "style": "plain",
+          "template": " \uf0e7 ",
+          "type": "root"
+        },
+        {
+          "foreground": "#ffffff",
+          "style": "plain",
+          "template": " {{ .UserName }}@{{ .HostName }} ",
+          "type": "session"
+        },
+	{
+          "foreground": "white",
+          "properties": {
+            "always_enabled": true,
+            "style": "round"
+          },
+          "style": "plain",
+          "template": " {{ .FormattedMs }} ",
+          "type": "executiontime"
+        },
+        {
+          "background": "#096C36",
+          "foreground": "#ffffff",
+          "properties": {
+            "folder_icon": "\uf115",
+            "folder_separator_icon": " \ue0b1 ",
+            "style": "full"
+          },
+          "style": "plain",
+          "template": "<transparent>\ue0b0</> {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "background": "#096C36",
+          "foreground": "#ffffff",
+          "style": "plain",
+          "template": "<#ffffff>\ue0b1</> {{ .HEAD }} ",
+          "type": "git"
+        },
+        {
+          "foreground": "#096C36",
+          "style": "plain",
+          "template": "\ue0b0 ",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "version": 2
+}
